@@ -1,0 +1,47 @@
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd pielSkin.png
+Ni 1.00
+Ks 0.27 0.27 0.27
+Ns 18.00
+newmtl phong3SG
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grisMetalico.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks grisMetalicoS.png
+Ns 18.00
+newmtl phong6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ruedaNegra.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks ruedaNegraS.png
+Ns 18.00
+newmtl silla:_Silver_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd pielSkin.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks pielSkinS.png
+Ns 0.06

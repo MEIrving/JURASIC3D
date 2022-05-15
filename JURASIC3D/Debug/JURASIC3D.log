@@ -1,0 +1,27 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (ProyectoFinal.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  JURASIC_3D.cpp
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(545,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(583,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(584,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(585,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1538,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1539,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1543,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1544,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1546,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1547,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  JURASIC3D.vcxproj -> C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\Debug\JURASIC3D.exe

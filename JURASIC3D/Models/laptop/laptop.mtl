@@ -1,0 +1,43 @@
+newmtl laptop:_Charcoal_2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd WP.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl laptop:_Gray3_
+illum 4
+Kd 0.84 0.84 0.84
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl laptop:_Gray5_
+illum 4
+Kd 0.53 0.53 0.53
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl laptop:keyboard_laptop
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd keyboard_laptop.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd negro.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns -1.00

@@ -1,0 +1,54 @@
+newmtl libros:_BurlyWood_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd rosa.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl libros:_Charcoal_2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grisO.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl libros:_SaddleBrown_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd cafe.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl libros:_Snow_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd blancoR.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl libros:_Yellow_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd amarillo.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd rojo.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00

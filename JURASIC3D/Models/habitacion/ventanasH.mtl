@@ -1,0 +1,15 @@
+newmtl initialShadingGroup
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grisO.png
+Ni 1.00
+newmtl puertaC:Translucent_Glass_Aqua
+illum 4
+Kd 0.28 0.82 0.80
+Ka 0.00 0.00 0.00
+Tf 0.50 0.50 0.50
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06

@@ -53,15 +53,17 @@ glm::vec3  direction(0.0f, -1.0f, -1.0f);
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 //glm::vec3 PosIni(-95.0f, 1.0f, -45.0f);
 glm::vec3 PosIni(0.0f, 0.0f, 0.0f);
-glm::vec3 lightDirection(0.0f, -1.0f, -1.0f);
+glm::vec3 lightDirection(0.0f, 0.2f, 0.0f);
 
-bool active;
+//control de luces y velocidad de la camara
+bool active, vel1=true,vel2,vel3;
+
 
 // Positions of the point lights
 glm::vec3 pointLightPositions[] = {
 	glm::vec3(1.736f,4.038f, -10.326f),//lamparas cama
 	glm::vec3(1.736f,4.038f, - 7.492f),//lamparas cama
-	glm::vec3(0.0f,0.0f,  0.0f),
+	glm::vec3(730.0f, 245.0f, -2630.103f),//volcan
 	glm::vec3(0.0f,0.0f, 0.0f)
 };
 
@@ -535,7 +537,7 @@ int main()
 	GLuint cubemapTexture = TextureLoading::LoadCubemap(faces);
 
 
-	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 50.0f);
+	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 2550.0f);
 
 	// Game loop
 	while (!glfwWindowShouldClose(window))
@@ -572,9 +574,9 @@ int main()
 
 
 		// Directional light
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.5f, 0.5f, 0.5f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.5f, 0.5f, 0.5f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -1.0f, -1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.3f, 0.3f, 0.3f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.3f, 0.3f, 0.3f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
 
 
@@ -610,8 +612,8 @@ int main()
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[2].diffuse"), lightColor.x, lightColor.y, lightColor.z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[2].specular"), 1.0f, 1.0f, 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[2].constant"), 1.0f);
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[2].linear"), 0.7f);
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[2].quadratic"), 1.8f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[2].linear"), 0.014f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[2].quadratic"), 0.0007f);
 
 		// Point light 4
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[3].position"), pointLightPositions[3].x, pointLightPositions[3].y, pointLightPositions[3].z);
@@ -668,11 +670,13 @@ int main()
 		//Carga de modelo
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		Mapa.Draw(lightingShader);
 
-		model = glm::translate(model, glm::vec3(18.0f, 0.0f, -23.0f));
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(730.0f, 0.0f, -2630.103f));
 		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
@@ -1419,33 +1423,95 @@ void DoMovement()
 {
 
 	// Camera controls
-	if (keys[GLFW_KEY_W] || keys[GLFW_KEY_UP])
+	if (vel1)
 	{
-		camera.ProcessKeyboard(FORWARD, deltaTime);
+		if (keys[GLFW_KEY_W] || keys[GLFW_KEY_UP])
+		{
+			camera.ProcessKeyboard(FORWARD, deltaTime);
 
+		}
+
+		if (keys[GLFW_KEY_S] || keys[GLFW_KEY_DOWN])
+		{
+			camera.ProcessKeyboard(BACKWARD, deltaTime);
+
+
+		}
+
+		if (keys[GLFW_KEY_A] || keys[GLFW_KEY_LEFT])
+		{
+			camera.ProcessKeyboard(LEFT, deltaTime);
+
+
+		}
+
+		if (keys[GLFW_KEY_D] || keys[GLFW_KEY_RIGHT])
+		{
+			camera.ProcessKeyboard(RIGHT, deltaTime);
+
+
+		}
 	}
 
-	if (keys[GLFW_KEY_S] || keys[GLFW_KEY_DOWN])
+	if (vel2)
 	{
-		camera.ProcessKeyboard(BACKWARD, deltaTime);
+		if (keys[GLFW_KEY_W] || keys[GLFW_KEY_UP])
+		{
+			camera.ProcessKeyboard(FORWARD, deltaTime*10);
+
+		}
+
+		if (keys[GLFW_KEY_S] || keys[GLFW_KEY_DOWN])
+		{
+			camera.ProcessKeyboard(BACKWARD, deltaTime*10);
 
 
+		}
+
+		if (keys[GLFW_KEY_A] || keys[GLFW_KEY_LEFT])
+		{
+			camera.ProcessKeyboard(LEFT, deltaTime*10);
+
+
+		}
+
+		if (keys[GLFW_KEY_D] || keys[GLFW_KEY_RIGHT])
+		{
+			camera.ProcessKeyboard(RIGHT, deltaTime*10);
+
+
+		}
 	}
 
-	if (keys[GLFW_KEY_A] || keys[GLFW_KEY_LEFT])
+	if (vel3)
 	{
-		camera.ProcessKeyboard(LEFT, deltaTime);
+		if (keys[GLFW_KEY_W] || keys[GLFW_KEY_UP])
+		{
+			camera.ProcessKeyboard(FORWARD, deltaTime * 100);
+
+		}
+
+		if (keys[GLFW_KEY_S] || keys[GLFW_KEY_DOWN])
+		{
+			camera.ProcessKeyboard(BACKWARD, deltaTime * 100);
 
 
+		}
+
+		if (keys[GLFW_KEY_A] || keys[GLFW_KEY_LEFT])
+		{
+			camera.ProcessKeyboard(LEFT, deltaTime * 100);
+
+
+		}
+
+		if (keys[GLFW_KEY_D] || keys[GLFW_KEY_RIGHT])
+		{
+			camera.ProcessKeyboard(RIGHT, deltaTime * 100);
+
+
+		}
 	}
-
-	if (keys[GLFW_KEY_D] || keys[GLFW_KEY_RIGHT])
-	{
-		camera.ProcessKeyboard(RIGHT, deltaTime);
-
-
-	}
-
 	/*if (keys[GLFW_KEY_T])
 	{
 		pointLightPositions[0].x += 0.01f;
@@ -1528,6 +1594,25 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 		{
 			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 		}
+	}
+	//configuracion de la velocidad de la camara para un mejor recorrido
+	if (keys[GLFW_KEY_1])
+	{
+		vel1 = true;
+		vel2 = false;
+		vel3 = false;
+	}
+	if (keys[GLFW_KEY_2])
+	{
+		vel1 = false;
+		vel2 = true;
+		vel3 = false;
+	}
+	if (keys[GLFW_KEY_3])
+	{
+		vel1 = false;
+		vel1 = false;
+		vel3 = true;
 	}
 }
 

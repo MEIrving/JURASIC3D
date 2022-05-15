@@ -213,7 +213,17 @@ int main()
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);*/
 
 	// Create a GLFWwindow object that we can use for GLFW's functions
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "313190731_PROYECTO_FINAL_GPO12", nullptr, nullptr);
+	//GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "313190731_PROYECTO_FINAL_GPO12", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "JURASIC3D", nullptr, nullptr);
+	//GLFWimage images[1];
+	//images[0].pixels = stbi_load("J3D.ico", &images[0].width, &images[0].height, 0, 4); //rgba channels 
+	//glfwSetWindowIcon(window, 1, images);
+	//stbi_image_free(images[0].pixels);
+	//glfwSetWindowIcon(window, 0, images);
+	//GLFW_ICON ICON "J3D.ico";
+
+	
+
 
 	if (nullptr == window)
 	{
@@ -258,7 +268,9 @@ int main()
 	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.frag");
 
-	Model Piso((char*)"Models/pisoC/pisoC.obj");
+	Model Mapa((char*)"Models/mapa/mapa.obj");
+	Model Volcan((char*)"Models/volcan/volcan.obj");
+	//Model Piso((char*)"Models/pisoC/pisoC.obj");
 	//Model Esfera((char*)"Models/Esfera/Esfera.obj");
 	//Model Box((char*)"Models/Box/box.obj");
 	Model Cama((char*)"Models/cama/cama.obj");
@@ -653,12 +665,19 @@ int main()
 
 
 
-		//Carga de modelo 
+		//Carga de modelo
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
-		Piso.Draw(lightingShader);
+		Mapa.Draw(lightingShader);
+
+		model = glm::translate(model, glm::vec3(18.0f, 0.0f, -23.0f));
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		Volcan.Draw(lightingShader);
+		
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.815f, 2.977f, -7.24f));

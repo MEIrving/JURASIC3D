@@ -1,0 +1,35 @@
+newmtl cama:Material_009
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd blancoC.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 250.00
+newmtl cama:Material_011
+illum 4
+Kd 0.80 0.80 0.80
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 250.00
+newmtl cama:phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd base.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl cama:phong1SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd hd-abstract.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00

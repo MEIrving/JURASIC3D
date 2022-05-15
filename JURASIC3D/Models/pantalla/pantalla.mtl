@@ -1,0 +1,39 @@
+newmtl pantalla:_Charcoal_2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd negro.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks NegroS.png
+Ns 0.06
+newmtl pantalla:_DarkGray_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd barragris.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barragrisS.png
+Ns 0.06
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd pantalla.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd barragris.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks barragrisS.png
+Ns 18.00

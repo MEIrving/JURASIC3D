@@ -1,0 +1,28 @@
+newmtl PlantaH:_Dark_Brown_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd cafeT.png
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl PlantaH:_GrassGreen_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd costilla_de_adán.PNG
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl PlantaH:_Prussian_Blue_
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd azulM.png
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks azulMS.png
+Ns 0.06

@@ -1,0 +1,81 @@
+newmtl pyf:FrontColor
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd _8.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:Groundcover_Gravel_Crushed_Gray
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Groundcover_Gravel_Crushed_Gray.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:Groundcover_Gravel__25
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Groundcover_Gravel__25.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:Tile_Ceramic_Multi
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Tile_Ceramic_Multi.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:Vegetation_Blur7
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Vegetation_Blur7.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:Vegetation_Blur9
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Vegetation_Blur7.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:_6
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd _6.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:_8
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd _7.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06
+newmtl pyf:_10
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd _8.jpg
+Ni 1.00
+Ks 0.33 0.33 0.33
+Ns 0.06

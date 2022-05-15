@@ -145,17 +145,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="JURASIC3D.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="meshAnim.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="modelAnim.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\lamp.frag" />
     <None Include="Shaders\lamp.vs" />
     <None Include="Shaders\lighting.frag" />
     <None Include="Shaders\lighting.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="JURASIC_3D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

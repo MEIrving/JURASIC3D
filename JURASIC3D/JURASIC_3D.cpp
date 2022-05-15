@@ -63,7 +63,7 @@ bool active, vel1=true,vel2,vel3;
 glm::vec3 pointLightPositions[] = {
 	glm::vec3(1.736f,4.038f, -10.326f),//lamparas cama
 	glm::vec3(1.736f,4.038f, - 7.492f),//lamparas cama
-	glm::vec3(730.0f, 245.0f, -2630.103f),//volcan
+	glm::vec3(730.0f, 230.0f, -2630.103f),//volcan
 	glm::vec3(0.0f,0.0f, 0.0f)
 };
 

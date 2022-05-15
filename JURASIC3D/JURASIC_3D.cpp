@@ -1366,7 +1366,7 @@ void animacion()
 
 					banderaS = true;
 				}
-				banderaM = false;
+				banderaH = false;
 			}
 
 			

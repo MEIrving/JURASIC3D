@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <irrKlang.h>
 
 // GLEW
 #include <GL/glew.h>
@@ -25,6 +26,10 @@
 #include "Model.h"
 #include "Texture.h"
 #include "modelAnim.h"
+
+//using namespace irrklang;
+//#pragma comment(lib, "irrKlang.lib")
+//
 
 // Function prototypes
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -58,6 +63,7 @@ glm::vec3 lightDirection(0.0f, 0.2f, 0.0f);
 //control de luces y velocidad de la camara
 bool active, vel1=true,vel2,vel3;
 
+float tiempo, tiempo2;
 
 // Positions of the point lights
 glm::vec3 pointLightPositions[] = {
@@ -203,7 +209,7 @@ void interpolation(void)
 
 
 
-int main()
+int main(int argc, const char** argv)
 {
 	// Init GLFW
 	glfwInit();
@@ -224,7 +230,23 @@ int main()
 	//glfwSetWindowIcon(window, 0, images);
 	//GLFW_ICON ICON "J3D.ico";
 
-	
+	//using namespace irrklang;
+
+
+	//		// start the sound engine with default parameters
+	//ISoundEngine* engine = createIrrKlangDevice();
+
+	//if (!engine)
+	//	return 0; // error starting up the engine
+
+	//  // play some sound stream, looped
+	//engine->play2D("audio/bell.wav", true);
+
+	////char i = 0;
+	////std::cin >> i; // wait for user to press some key
+
+	//engine->drop(); // delete engine
+	//
 
 
 	if (nullptr == window)
@@ -269,8 +291,12 @@ int main()
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.frag");
+	Shader Anim2("Shaders/anim2.vs", "Shaders/anim2.frag");
 
 	Model Mapa((char*)"Models/mapa/mapa.obj");
+	Model Mar((char*)"Models/mar/mar.obj");
+	Model Nube((char*)"Models/nube/nube.obj");
+
 	Model Volcan((char*)"Models/volcan/volcan.obj");
 	//Model Piso((char*)"Models/pisoC/pisoC.obj");
 	//Model Esfera((char*)"Models/Esfera/Esfera.obj");
@@ -339,10 +365,17 @@ int main()
 
 	//Modelo de animación
 	ModelAnim animacionPersonaje("Animaciones/Personaje3/circle.dae");
+	ModelAnim Ptero("Animaciones/ptero/ptero.dae");
+	ModelAnim Raptor("Animaciones/Personaje6/raptor.dae");
+	ModelAnim TREX("Animaciones/TREX/TREX.dae");
+	ModelAnim Stegosaurus("Animaciones/stegosaurus/stegosaurus.dae");
 	
 
+	TREX.initShaders(animShader.Program);
 	animacionPersonaje.initShaders(animShader.Program);
-	
+	Raptor.initShaders(animShader.Program);
+	Stegosaurus.initShaders(animShader.Program);
+	Ptero.initShaders(animShader.Program);
 	//Inicialización de KeyFrames
 
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -574,7 +607,7 @@ int main()
 
 
 		// Directional light
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -1.0f, -1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -50.0f, -50.0f, 100.0f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.3f, 0.3f, 0.3f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.3f, 0.3f, 0.3f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
@@ -1212,6 +1245,34 @@ int main()
 		glBindVertexArray(0);
 
 
+		Anim2.Use();
+		tiempo2 = glfwGetTime();
+		// Get location objects for the matrices on the lamp shader (these could be different on a different shader)
+		modelLoc = glGetUniformLocation(Anim2.Program, "model");
+		viewLoc = glGetUniformLocation(Anim2.Program, "view");
+		projLoc = glGetUniformLocation(Anim2.Program, "projection");
+		// Set matrices
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-13.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(Anim2.Program, "time"), tiempo2);
+		Mar.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(Anim2.Program, "time"), tiempo2);
+		Nube.Draw(lightingShader);
+
+
+		glBindVertexArray(0);
+
+		
+
 		/*_______________________________Personaje Animado___________________________*/
 		animShader.Use();
 		modelLoc = glGetUniformLocation(animShader.Program, "model");
@@ -1223,18 +1284,46 @@ int main()
 
 		glUniform3f(glGetUniformLocation(animShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
 		glUniform1f(glGetUniformLocation(animShader.Program, "material.shininess"), 32.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 1.0f, 1.0f, 1.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 0.50f, 0.50f, 0.50f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 0.50f, 0.50f, 0.50f);
 		glUniform3f(glGetUniformLocation(animShader.Program, "light.specular"), 0.5f, 0.5f, 0.5f);
 		glUniform3f(glGetUniformLocation(animShader.Program, "light.direction"), 0.0f, -1.0f, -1.0f);
 		view = camera.GetViewMatrix();
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.2, 3.1f, -5.0f));
-		model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
+		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
+		model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
+
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		animacionPersonaje.Draw(animShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.2, 3.1f, -5.0f));
+		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
+		model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
+
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Raptor.Draw(animShader);
 		
+		model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(-829.412, 0.0f, -1348.0f));
+		//model = glm::translate(model, glm::vec3(-829.412+((float) glfwGetTime()), 0.0f, -1348.0f));//ACOMODAR COOREDENADAS
+		model = glm::translate(model, glm::vec3(0.0, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0 + ((float)glfwGetTime()), 0.0f, 0.0f));//ACOMODAR COOREDENADAS
+		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
+		//model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Stegosaurus.Draw(animShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -906.0f));//ACOMODAR COOREDENADAS
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		TREX.Draw(animShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(770.0, 280.0f, -2630.103f));//ACOMODAR COOREDENADAS
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ptero.Draw(animShader);
 		//animacion de reloj segundero
 		/*model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-3.579f, 5.176f, -12.065f));

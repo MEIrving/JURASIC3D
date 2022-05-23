@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <irrKlang.h>
+
 
 // GLEW
 #include <GL/glew.h>
@@ -27,9 +27,7 @@
 #include "Texture.h"
 #include "modelAnim.h"
 
-//using namespace irrklang;
-//#pragma comment(lib, "irrKlang.lib")
-//
+
 
 // Function prototypes
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -117,7 +115,7 @@ glm::vec3 pointLightPositions[] = {
 //	   -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
 //};
 
-
+float mov = 0.0;
 
 glm::vec3 Light1 = glm::vec3(0);
 
@@ -369,13 +367,16 @@ int main(int argc, const char** argv)
 	ModelAnim Raptor("Animaciones/Personaje6/raptor.dae");
 	ModelAnim TREX("Animaciones/TREX/TREX.dae");
 	ModelAnim Stegosaurus("Animaciones/stegosaurus/stegosaurus.dae");
-	
+	ModelAnim Ste("Animaciones/stegosaurus/ste.dae");
 
-	TREX.initShaders(animShader.Program);
 	animacionPersonaje.initShaders(animShader.Program);
-	Raptor.initShaders(animShader.Program);
-	Stegosaurus.initShaders(animShader.Program);
 	Ptero.initShaders(animShader.Program);
+	Raptor.initShaders(animShader.Program);
+	TREX.initShaders(animShader.Program);
+	Stegosaurus.initShaders(animShader.Program);
+	Ste.initShaders(animShader.Program);
+
+	
 	//Inicialización de KeyFrames
 
 	for (int i = 0; i < MAX_FRAMES; i++)
@@ -1314,6 +1315,22 @@ int main(int argc, const char** argv)
 		Stegosaurus.Draw(animShader);
 
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-829.412, 0.0f, -1348.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0, 0.0f, 50.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
+
+		
+		//model = glm::translate(model, glm::vec3(-829.412+((float) glfwGetTime()), 0.0f, -1348.0f));//ACOMODAR COOREDENADAS
+		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
+		//model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ste.Draw(animShader);
+
+		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -906.0f));//ACOMODAR COOREDENADAS
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		TREX.Draw(animShader);
@@ -1466,6 +1483,7 @@ void animacion()
 		{
 			limiteGrados = 0.0f;
 		}
+
 		
 
 	
@@ -1599,6 +1617,15 @@ void DoMovement()
 
 		}
 	}
+	
+	if (mov > 50.0f)
+	{
+		mov = 0.0f;
+	}
+	else
+	{
+		mov = (float)glfwGetTime();
+	}
 	/*if (keys[GLFW_KEY_T])
 	{
 		pointLightPositions[0].x += 0.01f;
@@ -1682,6 +1709,7 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 		}
 	}
+
 	//configuracion de la velocidad de la camara para un mejor recorrido
 	if (keys[GLFW_KEY_1])
 	{

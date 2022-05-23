@@ -1306,10 +1306,8 @@ int main(int argc, const char** argv)
 		Raptor.Draw(animShader);
 		
 		model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(-829.412, 0.0f, -1348.0f));
+		model = glm::translate(model, glm::vec3(-829.412, 0.0f, -1348.0f));
 		//model = glm::translate(model, glm::vec3(-829.412+((float) glfwGetTime()), 0.0f, -1348.0f));//ACOMODAR COOREDENADAS
-		model = glm::translate(model, glm::vec3(0.0, 0.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(0 + ((float)glfwGetTime()), 0.0f, 0.0f));//ACOMODAR COOREDENADAS
 		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
 		//model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));

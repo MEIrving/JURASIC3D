@@ -294,6 +294,7 @@ int main(int argc, const char** argv)
 	Model Mapa((char*)"Models/mapa/mapa.obj");
 	Model Mar((char*)"Models/mar/mar.obj");
 	Model Nube((char*)"Models/nube/nube.obj");
+	Model lago((char*)"Models/lago/lago.obj");
 
 	Model Volcan((char*)"Models/volcan/volcan.obj");
 	Model RESTAURANT((char*)"Models/RESTAURANT/RESTAURANT.obj");
@@ -370,16 +371,27 @@ int main(int argc, const char** argv)
 	ModelAnim Ptero("Animaciones/ptero/ptero.dae");
 	ModelAnim Raptor("Animaciones/Personaje6/raptor.dae");
 	ModelAnim TREX("Animaciones/TREX/TREX.dae");
+	ModelAnim huir("Animaciones/RunningToTurn/RunningToTurn.dae");
+
 	ModelAnim Stegosaurus("Animaciones/stegosaurus/stegosaurus.dae");
 	ModelAnim Ste("Animaciones/stegosaurus/ste.dae");
+	ModelAnim ganman("Animaciones/GangnamStyle/GangnamStyle.dae");
+	ModelAnim swing("Animaciones/SwingDancing/SwingDancing.dae");
+	ModelAnim sumergir("Animaciones/RunToDive/RunToDive.dae");
 
+	ModelAnim braqui("Animaciones/braqui/braqui.dae");
+	
 	animacionPersonaje.initShaders(animShader.Program);
 	Ptero.initShaders(animShader.Program);
 	Raptor.initShaders(animShader.Program);
 	TREX.initShaders(animShader.Program);
+	huir.initShaders(animShader.Program);
 	Stegosaurus.initShaders(animShader.Program);
 	Ste.initShaders(animShader.Program);
+	ganman.initShaders(animShader.Program);
+	swing.initShaders(animShader.Program);
 
+	braqui.initShaders(animShader.Program);
 	
 	//Inicialización de KeyFrames
 
@@ -755,9 +767,9 @@ int main(int argc, const char** argv)
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		HOTEL.Draw(lightingShader);
+
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-166.0f, 0.0f, -1800.0f));
-
 		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
@@ -1316,6 +1328,11 @@ int main(int argc, const char** argv)
 		glUniform1f(glGetUniformLocation(Anim2.Program, "time"), tiempo2);
 		Nube.Draw(lightingShader);
 
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1164.101f, 0.0f, -814.614f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(Anim2.Program, "time"), tiempo2);
+		lago.Draw(lightingShader);
 
 		glBindVertexArray(0);
 
@@ -1342,9 +1359,9 @@ int main(int argc, const char** argv)
 		model = glm::translate(model, glm::vec3(0.2, 3.1f, -5.0f));
 		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
 		model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
-
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		animacionPersonaje.Draw(animShader);
+
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.2, 3.1f, -5.0f));
 		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
@@ -1362,20 +1379,26 @@ int main(int argc, const char** argv)
 		Stegosaurus.Draw(animShader);
 
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-879.412, 0.0f, -1348.0f));//ACOMODAR COOREDENADAS
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		TREX.Draw(animShader);
+
+		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-829.412, 0.0f, -1348.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::translate(model, glm::vec3(0.0, 0.0f, 50.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-
-		//model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
-
-		
-		//model = glm::translate(model, glm::vec3(-829.412+((float) glfwGetTime()), 0.0f, -1348.0f));//ACOMODAR COOREDENADAS
-		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
-		//model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ste.Draw(animShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-829.412, 180.0f, -1348.0f));//ACOMODAR COOREDENADAS
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ptero.Draw(animShader);
+
+		model = glm::translate(model, glm::vec3(-50.412, 100.0f, -50.0f));//ACOMODAR COOREDENADAS
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ptero.Draw(animShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -906.0f));//ACOMODAR COOREDENADAS
@@ -1383,13 +1406,50 @@ int main(int argc, const char** argv)
 		TREX.Draw(animShader);
 
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -898.667f));//ACOMODAR COOREDENADAS
+		model = glm::scale(model, glm::vec3(0.11f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		huir.Draw(animShader);
+		
+
+		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(770.0, 280.0f, -2630.103f));//ACOMODAR COOREDENADAS
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ptero.Draw(animShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(770.0, 280.0f, -2630.103f));//ACOMODAR COOREDENADAS
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ptero.Draw(animShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-729.412, 0.0f, -1348.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0, 0.0f, 50.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		braqui.Draw(animShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -906.0f));//ACOMODAR COOREDENADAS
+		model = glm::scale(model, glm::vec3(0.11f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		ganman.Draw(animShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -781.0f));//ACOMODAR COOREDENADAS
+		model = glm::scale(model, glm::vec3(0.11f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		swing.Draw(animShader);
 		
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(1113.874, 0.0f, -805.906f));//ACOMODAR COOREDENADAS
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.11f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		sumergir.Draw(animShader);
 
 
-		
 		glBindVertexArray(0);
 
 

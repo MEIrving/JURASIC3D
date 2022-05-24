@@ -390,7 +390,7 @@ int main(int argc, const char** argv)
 	Ste.initShaders(animShader.Program);
 	ganman.initShaders(animShader.Program);
 	swing.initShaders(animShader.Program);
-
+	sumergir.initShaders(animShader.Program);
 	braqui.initShaders(animShader.Program);
 	
 	//Inicialización de KeyFrames
@@ -1329,7 +1329,7 @@ int main(int argc, const char** argv)
 		Nube.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-1164.101f, 0.0f, -814.614f));
+		model = glm::translate(model, glm::vec3(1164.101f, 0.50f, -814.614f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(Anim2.Program, "time"), tiempo2);
 		lago.Draw(lightingShader);
@@ -1356,17 +1356,16 @@ int main(int argc, const char** argv)
 		view = camera.GetViewMatrix();
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.2, 3.1f, -5.0f));
+		model = glm::translate(model, glm::vec3(0.15, 3.1f, -5.0f));
 		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
-		model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
+		model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		animacionPersonaje.Draw(animShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.2, 3.1f, -5.0f));
+		model = glm::translate(model, glm::vec3(1246.507, 0.0f, -805.408f));
 		//model = glm::scale(model, glm::vec3(0.008f));	// it's a bit too big for our scene, so scale it down
 		model = glm::scale(model, glm::vec3(0.01f));	// it's a bit too big for our scene, so scale it down
-
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Raptor.Draw(animShader);
 		
@@ -1407,7 +1406,7 @@ int main(int argc, const char** argv)
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -898.667f));//ACOMODAR COOREDENADAS
-		model = glm::scale(model, glm::vec3(0.11f));
+		model = glm::scale(model, glm::vec3(0.011f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		huir.Draw(animShader);
 		
@@ -1423,29 +1422,29 @@ int main(int argc, const char** argv)
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-729.412, 0.0f, -1348.0f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		/*model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians((float)glfwGetTime()), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::translate(model, glm::vec3(0.0, 0.0f, 50.0f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));*/
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		braqui.Draw(animShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -906.0f));//ACOMODAR COOREDENADAS
-		model = glm::scale(model, glm::vec3(0.11f));
+		model = glm::translate(model, glm::vec3(1260.0, 0.0f, -779.0f));//ACOMODAR COOREDENADAS
+		model = glm::scale(model, glm::vec3(0.011f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		ganman.Draw(animShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(1267.0, 0.0f, -781.0f));//ACOMODAR COOREDENADAS
-		model = glm::scale(model, glm::vec3(0.11f));
+		model = glm::scale(model, glm::vec3(0.011f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		swing.Draw(animShader);
 		
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(1113.874, 0.0f, -805.906f));//ACOMODAR COOREDENADAS
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.11f));
+		model = glm::scale(model, glm::vec3(0.011f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		sumergir.Draw(animShader);
 

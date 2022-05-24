@@ -2,38 +2,38 @@
   JURASIC_3D.cpp
 C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(581,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(619,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(585,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(623,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(620,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(624,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(621,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(625,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1250,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1738,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1739,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1743,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1744,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1746,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1747,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1297,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1779,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1780,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1784,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1785,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1787,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\JURASIC3D\JURASIC_3D.cpp(1788,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 soil2-debug.lib(SOIL2.obj) : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/OPT:ICF'
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  1 of 1067 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  12 of 1067 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    14 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
-soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(etc1_utils.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(etc1_utils.obj)' o en 'C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(image_helper.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
   JURASIC3D.vcxproj -> C:\Users\I-M-E\Downloads\CGIHC\Lab\proyecto\Repositorio\JURASIC3D\Release\JURASIC3D.exe

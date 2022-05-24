@@ -296,9 +296,13 @@ int main(int argc, const char** argv)
 	Model Nube((char*)"Models/nube/nube.obj");
 
 	Model Volcan((char*)"Models/volcan/volcan.obj");
-	//Model Piso((char*)"Models/pisoC/pisoC.obj");
-	//Model Esfera((char*)"Models/Esfera/Esfera.obj");
-	//Model Box((char*)"Models/Box/box.obj");
+	Model RESTAURANT((char*)"Models/RESTAURANT/RESTAURANT.obj");
+	Model HANGAR((char*)"Models/HANGAR/HANGAR.obj");
+	Model UH60((char*)"Models/HANGAR/UH60/UH60.obj");
+	Model MALL((char*)"Models/MALL/MALL.obj");
+	Model HOTEL((char*)"Models/HOTEL/HOTEL.obj");
+	Model tylosaurus_SKLTN((char*)"Models/tylosaurus_SKLTN/tylosaurus_SKLTN.obj");
+
 	Model Cama((char*)"Models/cama/cama.obj");
 	Model silla((char*)"Models/silla/silla.obj");
 	Model sillon((char*)"Models/sillon/sillon.obj");
@@ -716,7 +720,49 @@ int main(int argc, const char** argv)
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		Volcan.Draw(lightingShader);
 		
+		/////////////////////////7
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(861.674f, 0.0f, -331.861f));
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		RESTAURANT.Draw(lightingShader);
 
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1655.193f, 0.0f, 55.603f));
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		HANGAR.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-1700.193f, 0.0f, 55.603f));
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		UH60.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(381.0f, 0.0f, -217.185f));
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		MALL.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-341.0f, 0.0f, -442.852f));
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		HOTEL.Draw(lightingShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-166.0f, 0.0f, -1800.0f));
+
+		//model = glm::rotate(model, glm::radians((float)glfwGetTime() * 20), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		tylosaurus_SKLTN.Draw(lightingShader);
+		
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.815f, 2.977f, -7.24f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -1172,6 +1218,7 @@ int main(int argc, const char** argv)
 
 
 
+
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		
@@ -1339,15 +1386,9 @@ int main(int argc, const char** argv)
 		model = glm::translate(model, glm::vec3(770.0, 280.0f, -2630.103f));//ACOMODAR COOREDENADAS
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ptero.Draw(animShader);
-		//animacion de reloj segundero
-		/*model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-3.579f, 5.176f, -12.065f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));*/
+		
 
-		//model = glm::translate(model, glm::vec3(PosIni.x + 0.0f, PosIni.y + 0.0f, PosIni.z));
-		//model = glm::scale(model, glm::vec3(0.004f));	// it's a bit too big for our scene, so scale it down
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//reloj.Draw(animShader);
+
 		
 		glBindVertexArray(0);
 
